@@ -1,0 +1,15 @@
+__pycache__/
+.pytest_cache/
+*.py[cod]
+.env
+.DS_Store
+
+# Secrets
+*.pem
+*.key
+.env
+.env.*
+k8s-admin.conf
+kubeconfig
+.aws/
+.kube/

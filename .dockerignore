@@ -1,0 +1,11 @@
+.git
+.github
+__pycache__
+.pytest_cache
+*.pyc
+README.md
+infra
+k8s
+argocd
+scripts
+optional

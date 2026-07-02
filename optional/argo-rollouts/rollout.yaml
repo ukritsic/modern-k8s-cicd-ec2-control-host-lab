@@ -1,0 +1,46 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Rollout
+metadata:
+  name: fastapi-app
+spec:
+  replicas: 4
+  revisionHistoryLimit: 5
+  selector:
+    matchLabels:
+      app: fastapi-app
+  strategy:
+    canary:
+      maxSurge: "25%"
+      maxUnavailable: 0
+      steps:
+        - setWeight: 25
+        - pause:
+            duration: 60
+        - setWeight: 50
+        - pause:
+            duration: 60
+        - setWeight: 100
+  template:
+    metadata:
+      labels:
+        app: fastapi-app
+    spec:
+      imagePullSecrets:
+        - name: ecr-registry
+      containers:
+        - name: fastapi-app
+          image: APP_IMAGE
+          ports:
+            - name: http
+              containerPort: 8000
+          readinessProbe:
+            httpGet:
+              path: /health
+              port: http
+          resources:
+            requests:
+              cpu: 100m
+              memory: 128Mi
+            limits:
+              cpu: 500m
+              memory: 256Mi
