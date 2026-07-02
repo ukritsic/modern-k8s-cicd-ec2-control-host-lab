@@ -7,3 +7,6 @@ images:
 - name: APP_IMAGE
   newName: 281502313983.dkr.ecr.ap-southeast-1.amazonaws.com/modern-k8s-cicd-app
   newTag: 79485460f4e2ce303f3aefec3956f4c75137d3b6
+- name: fastapi-app
+  newName: 281502313983.dkr.ecr.ap-southeast-1.amazonaws.com/modern-k8s-cicd-app
+  newTag: 79485460f4e2ce303f3aefec3956f4c75137d3b6
