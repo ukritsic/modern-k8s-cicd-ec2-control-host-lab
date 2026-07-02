@@ -22,7 +22,7 @@ spec:
         - name: ecr-registry
       containers:
         - name: fastapi-app
-          image: APP_IMAGE
+          image: modern-k8s-cicd-app:bootstrap
           imagePullPolicy: IfNotPresent
           ports:
             - name: http
