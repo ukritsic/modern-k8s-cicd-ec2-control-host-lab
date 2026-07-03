@@ -22,7 +22,7 @@ spec:
         - name: ecr-registry
       containers:
         - name: fastapi-app
-          image: modern-k8s-cicd-app:bootstrap
+          image: 281502313983.dkr.ecr.ap-southeast-1.amazonaws.com/modern-k8s-cicd-app:79485460f4e2ce303f3aefec3956f4c75137d3b6
           imagePullPolicy: IfNotPresent
           ports:
             - name: http
